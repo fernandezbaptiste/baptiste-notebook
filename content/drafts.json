@@ -1,0 +1,23 @@
+[
+  {
+    "storyId": "resend-customer-stories",
+    "status": "draft",
+    "preparedAt": "2026-11-15",
+    "skill": "baptiste-content-advisor",
+    "copy": "If you’re writing about a developer product, this Resend customer story offers a few ideas for answering the reader’s “why should I care?” early on.\n\nIt describes Layer’s experience with Resend’s email API, all on one screen:\n\n• Name the audience. The headline points to developers across the team at Layer, making it easy to recognise who the story is for.\n\n• Give the reader evidence. Layer’s co-founder says he had Resend set up in their codebase within 30 seconds. The quote tells you something specific about getting started.\n\n• Explain what became easier. Any developer on the team can create an email template and start using it in the product.\n\nWe’re working on this across the Tessl blog too, which reaches more than 20,000 developers a month. Making the problem and the expected benefit clear upfront gives someone a reason to spend their time with an article.\n\nPerhaps a useful check before publishing: can a developer quickly tell whether it’s for them, what they’ll learn, and how that might help their work? 📝\n\nImage and breakdown: Developer Markepear, featuring Resend’s story about Layer.\nhttps://www.markepear.dev/developer-marketing-examples/case-study-in-a-single-view-from-resend"
+  },
+  {
+    "storyId": "posthog-comparisons",
+    "status": "draft",
+    "preparedAt": "2026-11-15",
+    "skill": "baptiste-content-advisor",
+    "copy": "Should developer products publish comparisons with competitors?\n\nChoosing to focus on your own product seems reasonable. PostHog’s approach is still worth a look: it reports more than 25,000 signups after people read its comparison content since 2021. That doesn’t establish how many signups the articles caused.\n\nA few practical details from Natalia Amorim’s piece:\n\n• Explain where another product is the better fit.\n• Keep competitor claims in shared files, so corrections reach every page using them.\n• Let competitors correct you. An Amplitude contributor fixed four feature claims; PostHog merged the changes that day.\n\nFor a team considering comparison content, maintaining an honest answer may be as much of the work as writing the first page. Useful to factor in before committing 📝\n\nSource: Natalia Amorim / PostHog\nhttps://posthog.com/blog/comparison-content-guide"
+  },
+  {
+    "storyId": "supabase-polish-week",
+    "status": "draft",
+    "preparedAt": "2026-11-15",
+    "skill": "baptiste-content-advisor",
+    "copy": "In a 2021 post about Supabase launch weeks, co-founder Ant Wilson described a change after the team found itself debugging production live on Discord: finish the major integrations a week before the announcement.\n\nFeatures could reach existing users early. The wider launch then gave the team a deadline for polishing the experience and explaining what had shipped.\n\nThere’s a practical detail worth borrowing: ask people outside the team to try it before launch. Someone unfamiliar with the product can reveal steps that feel obvious when you’ve been building it for months.\n\nWe had a polish week before DevCon for Tessl’s Software Factory too, working on onboarding and making it easier to get started.\n\nPerhaps a useful question when planning a launch: where have we left time for someone to try the whole journey? 📝\n\nSource: Ant Wilson / Supabase. An older piece, still worth reading.\nhttps://supabase.com/blog/supabase-how-we-launch"
+  }
+]

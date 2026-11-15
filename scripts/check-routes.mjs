@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+const origin=process.env.TEST_ORIGIN||'http://127.0.0.1:5178';
+if(!['localhost','127.0.0.1','[::1]'].includes(new URL(origin).hostname))throw new Error('Only run local sign-in tests on loopback.');
+const get=(path,options={})=>fetch(new URL(path,origin),{redirect:'manual',...options});
+let r=await get('/');assert.equal(r.status,200);const home=await r.text();assert.ok(home.includes('worth a'));assert.ok(!home.includes('Perhaps a useful check before publishing'));
+r=await get('/api/drafts/resend-customer-stories');assert.equal(r.status,401);
+r=await get('/api/drafts/resend-customer-stories',{headers:{'oai-authenticated-user-id':'spoof','oai-authenticated-user-email':'spoof@example.com'}});assert.equal(r.status,401,'Dev proxy must strip forged identity');
+r=await get('/drafts/resend-customer-stories');const anonymousDraft=await r.text();assert.ok(!anonymousDraft.includes('Perhaps a useful check before publishing'));assert.ok(r.status===307 || anonymousDraft.includes('/signin-with-chatgpt'));
+r=await get('/signin-with-chatgpt?return_to=%2Fdrafts%2Fresend-customer-stories');assert.equal(r.status,302);const cookie=r.headers.get('set-cookie')?.split(';')[0];assert.ok(cookie);
+r=await get('/api/drafts/resend-customer-stories',{headers:{cookie}});assert.equal(r.status,200);assert.match(r.headers.get('cache-control'),/no-store/);const draft=await r.json();assert.equal(draft.storyId,'resend-customer-stories');assert.ok(draft.copy.includes('20,000'));
+r=await get('/drafts/resend-customer-stories',{headers:{cookie}});assert.equal(r.status,200);assert.ok((await r.text()).includes('Your starting point'));
+r=await get('/api/drafts/does-not-exist',{headers:{cookie}});assert.equal(r.status,404);
+r=await get('/signin-with-chatgpt?return_to=https%3A%2F%2Fevil.example');assert.ok(!(r.headers.get('location')||'').includes('evil.example'));
+r=await get('/signout-with-chatgpt?return_to=%2F',{headers:{cookie}});assert.equal(r.status,302);assert.match(r.headers.get('set-cookie'),/Max-Age=0/i);
+r=await get('/api/drafts/resend-customer-stories');assert.equal(r.status,401);
+console.log('Passed: public feed, protected draft page/API, forged-header rejection, sign-in, sign-out, unknown draft and safe redirects.');

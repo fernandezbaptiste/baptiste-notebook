@@ -1,0 +1,16 @@
+name: Refresh the reading list
+description: Ask the content skills for a small, sourced selection.
+title: "Refresh the notebook: "
+body:
+  - type: textarea
+    id: brief
+    attributes:
+      label: What would be useful to explore?
+      description: Topics, companies, a date range, or feedback on the current edition.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Maintainer: review the request before applying the `tessl` label.
+        The agent should use `skills/curate-stories/SKILL.md`, open a PR, and leave merging to you.

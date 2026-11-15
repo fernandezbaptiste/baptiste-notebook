@@ -1,0 +1,85 @@
+{
+  "edition": {
+    "label": "Selected · 15 Nov 2026",
+    "selectedAt": "2026-11-15"
+  },
+  "stories": [
+    {
+      "id": "resend-customer-stories",
+      "company": "Resend",
+      "topic": "Developer marketing",
+      "title": "A customer story in one screen.",
+      "summary": "A named customer, a specific benefit, and a reason to keep reading.",
+      "publishedAt": "2026-08-27",
+      "dateKind": "Updated",
+      "verifiedAt": "2026-11-15",
+      "archive": false,
+      "facts": [
+        "Resend aims to fit a customer story in one viewport, with a descriptive title and a prominent customer quote.",
+        "In the Layer example, the co-founder describes getting set up within 30 seconds. Developers can create and use their own email templates.",
+        "Developer Markepear’s annotated breakdown points out the visible customer, clear benefits and named person behind the quote."
+      ],
+      "sources": [
+        {
+          "title": "Resend’s handbook",
+          "url": "https://resend.com/handbook/marketing/how-we-write-customer-stories"
+        },
+        {
+          "title": "Developer Markepear’s breakdown",
+          "url": "https://www.markepear.dev/developer-marketing-examples/case-study-in-a-single-view-from-resend"
+        }
+      ],
+      "image": {
+        "src": "/images/resend-annotated.png",
+        "alt": "Developer Markepear’s annotated Resend story about Layer, highlighting the quote, benefits, customer and testimonial.",
+        "credit": "Annotations: Developer Markepear. Customer story: Resend / Layer. Included for editorial commentary; excluded from the code license."
+      }
+    },
+    {
+      "id": "posthog-comparisons",
+      "company": "PostHog",
+      "topic": "Growth",
+      "title": "Let competitors correct the comparison.",
+      "summary": "PostHog accepted an Amplitude correction. Four claims fixed, in public.",
+      "publishedAt": "2026-10-27",
+      "dateKind": "Published",
+      "verifiedAt": "2026-11-15",
+      "archive": false,
+      "facts": [
+        "PostHog reports over 25,000 signups after comparison-content reads since 2021. This is association, not proof of incremental conversions.",
+        "Shared data files let a correction flow through to every comparison page using it.",
+        "An Amplitude contribution corrected four feature claims. PostHog describes merging it the same day."
+      ],
+      "sources": [
+        {
+          "title": "Natalia Amorim · PostHog",
+          "url": "https://posthog.com/blog/comparison-content-guide"
+        }
+      ],
+      "image": null
+    },
+    {
+      "id": "supabase-polish-week",
+      "company": "Supabase",
+      "topic": "Product launches",
+      "title": "Leave a little room before launch day.",
+      "summary": "Ship early. Use the final week to test the experience people will actually have.",
+      "publishedAt": "2021-11-26",
+      "dateKind": "Published",
+      "verifiedAt": "2026-11-15",
+      "archive": true,
+      "facts": [
+        "Ant Wilson’s 2021 account separates shipping from wider promotion: existing users can get features before launch week.",
+        "After live-debugging production during an earlier launch, Supabase aimed to finish major integrations a week early.",
+        "The final week includes testing with people outside the team, while keeping launch scope flexible."
+      ],
+      "sources": [
+        {
+          "title": "Ant Wilson · Supabase",
+          "url": "https://supabase.com/blog/supabase-how-we-launch"
+        }
+      ],
+      "image": null
+    }
+  ]
+}
