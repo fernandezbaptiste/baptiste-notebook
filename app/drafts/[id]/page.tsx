@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header, Footer } from "@/components/chrome";
 import { DraftEditor } from "@/components/draft-editor";
@@ -21,18 +20,18 @@ export default async function DraftPage({
     <>
       <Header signedIn />
       <main id="main" className="detail wrap">
-        <Link className="back-link" href="/">
+        <a className="back-link" href="/">
           ← Back to the notebook
-        </Link>
+        </a>
         <div className="story-meta">
           {story.company}
           <span className="meta-separator">/</span>LinkedIn draft
         </div>
         <h1>{story.title}</h1>
         <DraftEditor id={id} userKey={user.userId} initialCopy={draft.copy} />
-        <Link className="draft-link" href={`/stories/${id}`}>
+        <a className="draft-link" href={`/stories/${id}`}>
           Check the story &amp; sources ↗
-        </Link>
+        </a>
         {story.image && (
           <details className="source-image">
             <summary>Image &amp; credit</summary>

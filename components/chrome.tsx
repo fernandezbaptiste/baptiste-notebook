@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { profile } from "@/lib/content";
 import { chatGPTSignInPath, chatGPTSignOutPath } from "@/app/chatgpt-auth";
 export function Header({
@@ -10,12 +9,12 @@ export function Header({
 }) {
   return (
     <header className="site-header wrap">
-      <Link href="/" className="brand">
+      <a href="/" className="brand">
         <span className="monogram" aria-hidden="true">
           b.
         </span>
         {profile.name}
-      </Link>
+      </a>
       <nav className="site-nav" aria-label="Main navigation">
         <a
           className="subtle-link"

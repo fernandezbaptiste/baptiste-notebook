@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { getChatGPTUser } from "./chatgpt-auth";
 import { Header, Footer } from "@/components/chrome";
 import { stories, edition, profile } from "@/lib/content";
@@ -43,23 +42,23 @@ export default async function Home() {
                   )}
                 </div>
                 <h2>
-                  <Link href={`/stories/${story.id}`}>
+                  <a href={`/stories/${story.id}`}>
                     {story.title}
                     <span className="title-arrow" aria-hidden="true">
                       ↗
                     </span>
-                  </Link>
+                  </a>
                 </h2>
                 <p>{story.summary}</p>
               </div>
-              <Link
+              <a
                 className="row-action"
                 href={user ? `/drafts/${story.id}` : `/stories/${story.id}`}
                 aria-label={`${user ? "Draft a post about" : "Read about"} ${story.company}`}
               >
                 {user ? "Draft post" : "Take a look"}
                 <span aria-hidden="true">↗</span>
-              </Link>
+              </a>
             </li>
           ))}
         </ol>

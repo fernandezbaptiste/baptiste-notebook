@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header, Footer } from "@/components/chrome";
 import { getStory } from "@/lib/content";
@@ -17,9 +16,9 @@ export default async function StoryPage({
     <>
       <Header signedIn={!!user} returnTo={`/drafts/${id}`} />
       <main id="main" className="detail wrap">
-        <Link className="back-link" href="/">
+        <a className="back-link" href="/">
           ← Back to the notebook
-        </Link>
+        </a>
         <div className="story-meta">
           <span className={`company-dot ${story.company.toLowerCase()}`} />
           {story.company}
@@ -67,9 +66,9 @@ export default async function StoryPage({
         </div>
         <div className="detail-actions">
           {user ? (
-            <Link className="primary-button" href={`/drafts/${id}`}>
+            <a className="primary-button" href={`/drafts/${id}`}>
               Open LinkedIn draft ↗
-            </Link>
+            </a>
           ) : (
             <a
               className="primary-button"
