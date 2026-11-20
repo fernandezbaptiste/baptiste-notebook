@@ -14,3 +14,18 @@ r=await get('/signin-with-chatgpt?return_to=https%3A%2F%2Fevil.example');assert.
 r=await get('/signout-with-chatgpt?return_to=%2F',{headers:{cookie}});assert.equal(r.status,302);assert.match(r.headers.get('set-cookie'),/Max-Age=0/i);
 r=await get('/api/drafts/resend-customer-stories');assert.equal(r.status,401);
 console.log('Passed: public feed, protected draft page/API, forged-header rejection, sign-in, sign-out, unknown draft and safe redirects.');
+
+for (const id of ['resend-customer-stories','posthog-comparisons','supabase-polish-week']) {
+  const story=await get(`/stories/${id}`);
+  assert.equal(story.status,200,`Story route should render without client-side navigation: ${id}`);
+  const page=await story.text();
+  assert.ok(page.includes('Back to the notebook'));
+  assert.ok(page.includes('Log in for a draft'));
+  const signedInStory=await get(`/stories/${id}`,{headers:{cookie}});
+  assert.equal(signedInStory.status,200);
+  assert.ok((await signedInStory.text()).includes(`/drafts/${id}`));
+  const signedInDraft=await get(`/drafts/${id}`,{headers:{cookie}});
+  assert.equal(signedInDraft.status,200);
+  assert.ok((await signedInDraft.text()).includes('Your starting point'));
+}
+console.log('Passed: all three story links and all three signed-in draft pages.');

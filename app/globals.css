@@ -643,3 +643,25 @@ h1 em {
     flex-wrap: wrap;
   }
 }
+
+/* Native links work before hydration; the title's hit area spans the row. */
+.story-row {
+  position: relative;
+}
+.story-info h2 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.story-row .row-action {
+  position: relative;
+  z-index: 2;
+}
+.story-row:hover {
+  background: #eeefe730;
+}
+.story-row:has(.story-info h2 a:focus-visible) {
+  outline: 2px solid var(--green);
+  outline-offset: 5px;
+}
